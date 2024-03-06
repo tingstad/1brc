@@ -1,5 +1,5 @@
 (ns brc
-  (:import (java.util HashMap)))
+  (:require [clojure.string :as str]))
 
 (def file "../../dev/1brc/measurements.txt")
 
@@ -8,10 +8,7 @@
     (take num lines)))
 
 (defn words [line]
-  (+ 1 (count
-         (filter
-           (fn [ch] (= ch \ ))
-           (.replaceAll line "  " " ")))))
+  (count (str/split line #" +")))
 
 (defn length [line]
   (count (.getBytes line "UTF-8")))
