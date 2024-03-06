@@ -20,4 +20,8 @@
   (is (= [ 2 4 20 ] (brc/wc ["hello world", "see you"])))
   )
 
+(deftest echo-test
+  (is (= "1 22 3" (brc/echo [1 22 3]))))
+
+
 (clojure.test/run-tests)

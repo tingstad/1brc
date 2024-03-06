@@ -48,11 +48,13 @@
 (prn (wc (readlines file 100000)))
 )
 
+(defn echo [result]
+  (format "%d %d %d" (get result 0) (get result 1) (get result 2)))
+
 (defn main [_opts]
   (let [lines (line-seq (clojure.java.io/reader *in*))]
-    (prn
-      (wc lines)
-      )))
+    (let [result (wc lines)]
+      (println (echo result)))))
 
 (comment
   (wc (readlines file 5))
