@@ -8,6 +8,7 @@
 (deftest words-test
   (is (= 1 (brc/words "hello")))
   (is (= 2 (brc/words "hello world")))
+  (is (= 2 (brc/words "Flores,  Petén;35.1")))
   )
 
 (deftest length-test

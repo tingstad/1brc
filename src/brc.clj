@@ -11,7 +11,7 @@
   (+ 1 (count
          (filter
            (fn [ch] (= ch \ ))
-           line))))
+           (.replaceAll line "  " " ")))))
 
 (defn length [line]
   (count (.getBytes line "UTF-8")))
